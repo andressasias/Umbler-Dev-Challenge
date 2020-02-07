@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="mm-0" class="mm-page mm-slideout">
+
+    <section id="domain-search">
+        <div class="container py-4 pb-md-5">
+            <div id="box-result" class="row mb-2">
+                <div class="col-xs-12 col-sm-7 float-xs-none mx-auto pos-relative">
+                    <div class="text-xs-center mb-3"><h4>Digite o Domínio que deseja pesquisar</h4></div>
+                    <div class="form-group">
+                        <div class="input-group input-group-xl rounded">
+                            <input autofocus type="text" name="txt-search" id="txt-search" maxlength="61" placeholder="ex.: umbler.com" class="form-control form-control-lg domain" value="">
+                            <span class="input-group-btn">
+                                <button type="submit" id="btn-search" name="name" class="btn btn-success btn-block btn-lg text-xs-center" data-loading-text="Pesquisando...">
+                                    <span class="icon icon-search"></span>
+                                    <span class="ml-1 hidden-xs-down">Pesquisar</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container w-100">
+            <div class="row" id="cards-results" style="display:none;">
+                <div class="card card-block">
+                    <h4 id="name" class="card-title"></h4>
+                    <ul id="whois">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- /#text-search
+
+    <section id="domain-list">
+        <div class="container my-3 my-lg-5">
+        </div>
+    </section>-->
+    <!-- /#text-search
+
+    <section id="cta-list-ext" class="">
+        <div class="container text-xs-center py-5">
+        </div>
+    </section>
+
+    <div id="table-list-ext" class="bg-faded bg-secondary-lighter" style="display:none">
+        <div class="container py-4">
+        </div>
+    </div>-->
+
+    <a id="back-top" href="javascript:void(0);" rel="nofollow" class="icon icon-arrow-upward icon-inverse icon-3x hidden-sm-down"></a>
+</div>
