@@ -27,7 +27,7 @@ namespace Desafio.Umbler
             // Add framework services.
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-
+           
             services.AddMvc();
         }
 

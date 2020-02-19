@@ -14,26 +14,24 @@ namespace Desafio.Umbler.Controllers
     [Route("api")]
     public class DomainController : Controller
     {
-        private readonly DatabaseContext _db;
-        
+        private readonly DatabaseContext _db;       
 
         public DomainController(DatabaseContext db)
         {
             _db = db;
         }
 
-
-
         [HttpGet, Route("domain/{domainName}")]
         public async Task<IActionResult> Get(string domainName)
         {
             //procura se já tenho esse domínio no banco
+            var whois = new SearchWhois();
             var domain = await _db.SearchDomain(_db, domainName);
 
             //se não encontrou o domínio no banco, pesquisa no whois e salva no banco
             if (domain == null)
             {
-                domain = await Models.SearchWhois.SearchInWhoisAsync(domainName);
+                domain = await whois.SearchInWhoisAsync(domainName);
                 if(domain.Name == "Error")
                 {
                     return BadRequest(domain.WhoIs);
@@ -46,7 +44,7 @@ namespace Desafio.Umbler.Controllers
             //se já esgotou o ttl do domínio, preciso pesquisar novamente no whois e atualizar no banco.
             if (hora > domain.Ttl)
             {
-                var domain2 = await Models.SearchWhois.SearchInWhoisAsync(domainName);
+                var domain2 = await whois.SearchInWhoisAsync(domainName);
 
                 domain.Name = domain2.Name;
                 domain.Ip = domain2.Ip;

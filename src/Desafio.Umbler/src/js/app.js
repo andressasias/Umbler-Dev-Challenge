@@ -55,7 +55,7 @@ class Api {
 
 const api = new Api()
 
-//função que irá se comunicar com o Domain Controller, receber o domínio e ajustar para apresentar na tela
+//funï¿½ï¿½o que irï¿½ se comunicar com o Domain Controller, receber o domï¿½nio e ajustar para apresentar na tela
 async function searchDomain() {
 
     var error = checkForm();
@@ -98,7 +98,7 @@ async function searchDomain() {
     }
 }
 
-//função para checkar se domínio foi preenchido corretamente
+//funï¿½ï¿½o para checkar se domï¿½nio foi preenchido corretamente
 function checkForm() {
 
     var dominio = document.getElementById("txt-search").value.toString();

@@ -9,9 +9,9 @@ using Whois.NET;
 
 namespace Desafio.Umbler.Models
 {
-    public static class SearchWhois
+    public class SearchWhois
     {
-        public static async Task<Domain> SearchInWhoisAsync(string domainName)
+        public async Task<Domain> SearchInWhoisAsync(string domainName)
         {
             Console.WriteLine("Entrei no search Whois");
             Domain domain;
