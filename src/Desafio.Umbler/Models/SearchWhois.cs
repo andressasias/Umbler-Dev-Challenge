@@ -9,7 +9,7 @@ using Whois.NET;
 
 namespace Desafio.Umbler.Models
 {
-    public class SearchWhois
+    public class SearchWhois : ISearchWhois
     {
         public async Task<Domain> SearchInWhoisAsync(string domainName)
         {
